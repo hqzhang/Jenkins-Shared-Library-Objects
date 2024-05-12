@@ -2,7 +2,7 @@
 
 def consul = new org.foo.Consul()
 
-node('NODE') {
+node('master') {
     try {
 
         String jsonRegisterData = "{ .. }" // A string whatever data we want in json format
