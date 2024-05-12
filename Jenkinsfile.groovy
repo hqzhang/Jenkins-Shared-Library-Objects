@@ -4,7 +4,7 @@ repo = repo.replace(' (null)','').replace('null => ','')
 def brch= scm.branches[0].toString().replace('*/','')
 def shlib = library identifier: "'Jenkins-Shared-Library-Objects@with-shared-library'", retriever: modernSCM(
   [$class: 'GitSCMSource', remote: repo, credentialsId: ''])
-def consul = new org.foo.Consul()
+def consul = new shlib.org.foo.Consul()
 
 
 node('NODE') {
