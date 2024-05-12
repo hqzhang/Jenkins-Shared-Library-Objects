@@ -1,11 +1,6 @@
-//@Library('Jenkins-Shared-Library-Objects@with-shared-library')
-def repo = scm.getUserRemoteConfigs()[0].toString()
-repo = repo.replace(' (null)','').replace('null => ','')
-def brch= scm.branches[0].toString().replace('*/','')
-def shlib = library identifier: "Jenkins-Shared-Library-Objects@with-shared-library", retriever: modernSCM(
-  [$class: 'GitSCMSource', remote: repo, credentialsId: ''])
-def consul = new shlib.org.foo.Consul()
+@Library('Jenkins-Shared-Library-Objects@with-shared-library')
 
+def consul = new org.foo.Consul()
 
 node('NODE') {
     try {
