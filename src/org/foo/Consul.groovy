@@ -7,6 +7,7 @@ package org.foo
  * @return stdout
  */
 def register(String path, String data){
+    println "enter register()"
     return sh (script: "curl -X PUT -H 'Content-Type: application/json' ${path}/catalog/register -d \'$data\'", returnStdout: true)
 }
 
