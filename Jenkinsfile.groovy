@@ -11,7 +11,9 @@ pipeline {
         stage("register data") {
             steps {
                 script {
-                     consul.register(path, jsonRegisterData)
+                    sh 'ls'
+                    sh (script: "pwd", returnStdout: true)
+                    consul.register(path, jsonRegisterData)
                 }
             }
         }
@@ -27,8 +29,8 @@ pipeline {
         stage("list Nodes"){
              steps {
                 script {
-            consul.list_nodes(path)
-         }
+                    consul.list_nodes(path)
+             }
             }
         }
         
