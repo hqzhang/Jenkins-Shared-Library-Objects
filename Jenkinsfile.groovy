@@ -11,8 +11,7 @@ pipeline {
         stage("register data") {
             steps {
                 script {
-                    sh 'ls'
-                    sh (script: "pwd", returnStdout: true)
+                   
                     consul.register(path, jsonRegisterData)
                 }
             }
