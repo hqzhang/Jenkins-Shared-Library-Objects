@@ -8,7 +8,8 @@ package org.foo
  */
 def register(String path, String data){
     println "enter register()"
-    return sh (script: "curl -X PUT -H 'Content-Type: application/json' ${path}/catalog/register -d \'$data\'", returnStdout: true)
+    return "curl -X PUT -H 'Content-Type: application/json' ${path}/catalog/register -d \'$data\'".execute().text
+    //return sh (script: "curl -X PUT -H 'Content-Type: application/json' ${path}/catalog/register -d \'$data\'", returnStdout: true)
 }
 
 /**
